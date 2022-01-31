@@ -5,7 +5,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "build": "npm i && tsc",
+    "build": "tsc",
     "lint": "eslint . --ext .ts",
     "start": "node build/index.js",
     "start:dev": "nodemon",
