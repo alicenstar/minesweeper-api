@@ -35,17 +35,6 @@ if (process.env.NODE_ENV === 'production') {
     app.use(helmet());
 }
 
-if (isProd) {
-    // Compute the build path and index.html path
-    const buildPath = path.resolve(__dirname, '../../build');
-    const indexHtml = path.join(buildPath, 'index.html');
-  
-    // Setup build path as a static assets path
-    app.use(express.static(buildPath));
-    // Serve index.html on unmatched routes
-    app.get('*', (req, res) => res.sendFile(indexHtml));
-};
-
 // Add APIs
 app.use('/api', BaseRouter);
 
